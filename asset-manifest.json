@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/parcel-tracking-new-post/static/css/main.7acaea2f.css",
+    "main.js": "/parcel-tracking-new-post/static/js/main.d5e1aa5c.js",
+    "index.html": "/parcel-tracking-new-post/index.html",
+    "main.7acaea2f.css.map": "/parcel-tracking-new-post/static/css/main.7acaea2f.css.map",
+    "main.d5e1aa5c.js.map": "/parcel-tracking-new-post/static/js/main.d5e1aa5c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.d5e1aa5c.js"
+  ]
+}
