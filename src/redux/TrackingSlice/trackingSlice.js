@@ -25,7 +25,7 @@ const trackingSlice = createSlice({
     [getCurrentTracking.fulfilled](state, action) {
       state.isLoading = false;
       state.error = null;
-      state.items = action.payload;
+      state.items = [{ ...action.payload }];
     },
     [getCurrentTracking.rejected]: handleRejected,
   },

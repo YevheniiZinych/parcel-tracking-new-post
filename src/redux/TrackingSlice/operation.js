@@ -6,7 +6,9 @@ const baseURL = 'https://api.novaposhta.ua/v2.0/json/';
 
 export const getCurrentTracking = createAsyncThunk(
   'parcel/fetchAll',
-  async (ttn, thunkAPI) => {
+  async (data, thunkAPI) => {
+    const ttn = data.number;
+
     const options = {
       apiKey: API_KEY,
       modelName: 'TrackingDocument',
@@ -22,7 +24,9 @@ export const getCurrentTracking = createAsyncThunk(
     try {
       const { data } = await axios.post(baseURL, options);
 
-      return data.data[0];
+      const { Status, WarehouseRecipient, WarehouseSender } = data.data[0];
+
+      return { Status, WarehouseRecipient, WarehouseSender };
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }
