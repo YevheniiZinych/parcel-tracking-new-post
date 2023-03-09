@@ -20,14 +20,12 @@ const TtnSlice = createSlice({
         };
       },
     },
-    // deleteTTN(state, action) {
-    //   const index = state.contact.findIndex(
-    //     contact => contact.id === action.payload
-    //   );
-    //   state.contact.splice(index, 1);
-    // },
+    deleteTTN(state, action) {
+      const index = state.ttn.findIndex(ttn => ttn.id === action.payload);
+      state.ttn.splice(index, 1);
+    },
   },
 });
 
-export const { addTTN } = TtnSlice.actions;
+export const { addTTN, deleteTTN } = TtnSlice.actions;
 export const TtnReducer = TtnSlice;
