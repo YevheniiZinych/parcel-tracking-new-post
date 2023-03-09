@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { getCurrentTracking } from 'redux/TrackingSlice/operation';
+import { addTTN } from 'redux/TtnSlice/ttnSlice';
 
 export const SearchForm = () => {
   const [number, setNumber] = useState('');
@@ -10,6 +11,7 @@ export const SearchForm = () => {
     e.preventDefault();
 
     dispatch(getCurrentTracking({ number }));
+    dispatch(addTTN({ number }));
 
     setNumber('');
   };

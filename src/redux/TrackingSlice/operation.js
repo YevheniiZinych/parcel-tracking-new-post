@@ -26,7 +26,7 @@ export const getCurrentTracking = createAsyncThunk(
 
       const { Status, WarehouseRecipient, WarehouseSender } = data.data[0];
 
-      return { Status, WarehouseRecipient, WarehouseSender };
+      return { Status, WarehouseRecipient, WarehouseSender, ttn };
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }
