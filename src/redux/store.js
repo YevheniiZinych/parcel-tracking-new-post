@@ -17,13 +17,11 @@ import { TtnReducer } from './TtnSlice/ttnSlice';
 const persistConfig = {
   key: 'ttn',
   storage,
-  // whitelist: ['ttn'],
 };
 const persistedTtnReducer = persistReducer(persistConfig, TtnReducer.reducer);
 
 export const store = configureStore({
   reducer: {
-    // parcel: persistReducer(persistConfig, parcelReducer),
     parcel: parcelReducer,
     ttn: persistedTtnReducer,
   },
