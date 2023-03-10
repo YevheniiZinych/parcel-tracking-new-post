@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/parcel-tracking-new-post/static/css/main.7acaea2f.css",
-    "main.js": "/parcel-tracking-new-post/static/js/main.9d77949c.js",
+    "main.js": "/parcel-tracking-new-post/static/js/main.674e4b19.js",
     "index.html": "/parcel-tracking-new-post/index.html",
     "main.7acaea2f.css.map": "/parcel-tracking-new-post/static/css/main.7acaea2f.css.map",
-    "main.9d77949c.js.map": "/parcel-tracking-new-post/static/js/main.9d77949c.js.map"
+    "main.674e4b19.js.map": "/parcel-tracking-new-post/static/js/main.674e4b19.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.9d77949c.js"
+    "static/js/main.674e4b19.js"
   ]
 }
