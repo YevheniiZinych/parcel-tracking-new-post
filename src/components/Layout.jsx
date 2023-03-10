@@ -10,7 +10,7 @@ export const Layout = () => {
           <NavLink to="/" end>
             Tracking Parcel
           </NavLink>
-          <NavLink>Post Office</NavLink>
+          <NavLink to="/office">Post Office</NavLink>
         </nav>
       </header>
       <Outlet />
