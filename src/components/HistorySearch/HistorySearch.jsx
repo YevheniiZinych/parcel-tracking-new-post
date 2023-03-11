@@ -1,28 +1,27 @@
 import { useSelector } from 'react-redux';
 import { getTtn } from 'redux/TtnSlice/selectors';
 import { TtnItem } from 'components/TtnItem/TtnItem';
+import { Inner } from './HistorySearch.styled';
 
 export const HistorySearch = ({ getCurrentTtn }) => {
   const { ttn } = useSelector(getTtn);
 
   return (
-    <>
+    <Inner>
       <ul>
         {ttn.length > 0 &&
           ttn.map(({ id, number }) => {
             return (
               <>
-                <li key={id}>
-                  <TtnItem
-                    getCurrentTtn={getCurrentTtn}
-                    id={id}
-                    number={number}
-                  />
-                </li>
+                <TtnItem
+                  getCurrentTtn={getCurrentTtn}
+                  id={id}
+                  number={number}
+                />
               </>
             );
           })}
       </ul>
-    </>
+    </Inner>
   );
 };

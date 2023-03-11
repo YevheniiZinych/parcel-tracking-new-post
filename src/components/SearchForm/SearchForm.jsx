@@ -1,12 +1,24 @@
-import { useState } from 'react';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { TextField } from '@mui/material';
+
+import { useTheme } from '@mui/material/styles';
 import { getCurrentTracking } from 'redux/TrackingSlice/operation';
 import { addTTN } from 'redux/TtnSlice/ttnSlice';
+import { getTtn } from 'redux/TtnSlice/selectors';
+import { Container, Button } from './SearchForm.styled';
 
 export const SearchForm = ({ currentTtn }) => {
   const [number, setNumber] = useState('');
+  const { ttn } = useSelector(getTtn);
   const dispatch = useDispatch();
+  const theme = useTheme();
+
+  const uniqTTN = ttn.reduce((acc, item) => {
+    acc.push(item.number);
+
+    return acc;
+  }, []);
 
   useEffect(() => {
     setNumber(currentTtn);
@@ -16,9 +28,14 @@ export const SearchForm = ({ currentTtn }) => {
     e.preventDefault();
 
     dispatch(getCurrentTracking({ number }));
-    dispatch(addTTN({ number }));
 
     setNumber('');
+
+    if (uniqTTN.includes(number)) {
+      return;
+    } else {
+      dispatch(addTTN({ number }));
+    }
   };
 
   const handleChange = e => {
@@ -35,18 +52,29 @@ export const SearchForm = ({ currentTtn }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={formSubmit}>
+    <form onSubmit={formSubmit}>
+      <Container>
         <label>
-          <input
+          <b>Введіть номер накладної</b>
+          <br />
+          <TextField
+            sx={{
+              width: '270px',
+              marginRight: '15px',
+              backgroundColor: 'white',
+              borderRadius: '3px',
+            }}
+            error
+            id="outlined-error"
             type="text"
             name="text"
             value={number}
             onChange={handleChange}
           />
         </label>
-        <button type="submit">Get status TTN</button>
-      </form>
-    </div>
+
+        <Button type="submit">Відстежити</Button>
+      </Container>
+    </form>
   );
 };
