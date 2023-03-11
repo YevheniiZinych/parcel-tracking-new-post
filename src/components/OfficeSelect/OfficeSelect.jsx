@@ -13,6 +13,7 @@ export const OfficeSelect = () => {
 
   const checkName = cityName === '' ? 'null' : cityName;
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const options = {
     apiKey: API_KEY,
     modelName: 'Address',
@@ -37,7 +38,7 @@ export const OfficeSelect = () => {
         .catch(err => console.log(err))
         .finally(() => setFetching(false));
     }
-  }, [fetching, cityName, office]);
+  }, [fetching, cityName, office, options]);
 
   useEffect(() => {
     if (cityName) {
