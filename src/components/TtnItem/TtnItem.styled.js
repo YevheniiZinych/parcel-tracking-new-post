@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const TtnNumber = styled.span`
   cursor: pointer;
   color: white;
+
+  @media (min-width: 320px) and (max-width: 767px) {
+    font-size: 16px;
+  }
 `;
 
 export const Inner = styled.div`
@@ -14,6 +18,12 @@ export const Inner = styled.div`
 export const Item = styled.li`
   & :not(:last-child) {
     margin-bottom: 15px;
+  }
+
+  @media (min-width: 320px) and (max-width: 767px) {
+    & :not(:last-child) {
+      margin-bottom: 5px;
+    }
   }
 `;
 

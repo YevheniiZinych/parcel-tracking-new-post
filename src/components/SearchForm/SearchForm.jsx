@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { TextField } from '@mui/material';
-
-import { useTheme } from '@mui/material/styles';
 import { getCurrentTracking } from 'redux/TrackingSlice/operation';
 import { addTTN } from 'redux/TtnSlice/ttnSlice';
 import { getTtn } from 'redux/TtnSlice/selectors';
@@ -12,7 +10,6 @@ export const SearchForm = ({ currentTtn }) => {
   const [number, setNumber] = useState('');
   const { ttn } = useSelector(getTtn);
   const dispatch = useDispatch();
-  const theme = useTheme();
 
   const uniqTTN = ttn.reduce((acc, item) => {
     acc.push(item.number);
@@ -60,6 +57,7 @@ export const SearchForm = ({ currentTtn }) => {
           <TextField
             sx={{
               width: '270px',
+              height: '55px',
               marginRight: '15px',
               backgroundColor: 'white',
               borderRadius: '3px',

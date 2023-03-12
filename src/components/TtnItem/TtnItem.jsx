@@ -1,6 +1,5 @@
 import { useDispatch } from 'react-redux';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
-
 import { getCurrentTracking } from 'redux/TrackingSlice/operation';
 import { deleteTTN } from 'redux/TtnSlice/ttnSlice';
 import { TtnNumber, Inner, Item, DeleteBtn } from './TtnItem.styled';

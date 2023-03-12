@@ -1,14 +1,11 @@
-// import { useEffect } from 'react';
-// import { getCurrentTracking } from 'redux/TrackingSlice/operation';
-// import { useDispatch } from 'react-redux';
-
-// import { lazy } from 'react';
+import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from 'components/Layout';
-import { Home } from 'Pages/Home/Home';
-import { PostOffice } from 'Pages/PostOffice/PostOffice';
 import { GlobalStyle } from 'components/GlobalStyle';
 import { Div } from './App.styled';
+
+const Home = lazy(() => import('../../Pages/Home/Home'));
+const PostOffice = lazy(() => import('../../Pages/PostOffice/PostOffice'));
 
 export const App = () => {
   return (
