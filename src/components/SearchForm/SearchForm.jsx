@@ -5,11 +5,14 @@ import toast from 'react-hot-toast';
 import { getCurrentTracking } from 'redux/TrackingSlice/operation';
 import { addTTN } from 'redux/TtnSlice/ttnSlice';
 import { getTtn } from 'redux/TtnSlice/selectors';
+import { getParcel } from 'redux/TrackingSlice/selectors';
+import { Spinner } from 'components/Spinner/Spinner';
 import { Container, Button } from './SearchForm.styled';
 
 export const SearchForm = ({ currentTtn }) => {
   const [number, setNumber] = useState('');
   const { ttn } = useSelector(getTtn);
+  const { isLoading } = useSelector(getParcel);
   const dispatch = useDispatch();
 
   const uniqTTN = ttn.reduce((acc, item) => {
@@ -29,7 +32,7 @@ export const SearchForm = ({ currentTtn }) => {
 
     setNumber('');
 
-    if (uniqTTN.includes(number)) {
+    if (uniqTTN.includes(number) || number === '') {
       return;
     } else {
       dispatch(addTTN({ number }));
@@ -76,8 +79,7 @@ export const SearchForm = ({ currentTtn }) => {
             onChange={handleChange}
           />
         </label>
-
-        <Button type="submit">Відстежити</Button>
+        {isLoading ? <Spinner /> : <Button type="submit">Відстежити</Button>}
       </Container>
     </form>
   );

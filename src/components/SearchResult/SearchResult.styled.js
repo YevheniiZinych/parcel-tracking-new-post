@@ -32,10 +32,4 @@ export const ResultItem = styled.ul`
   & :not(:last-child) {
     margin-bottom: 15px;
   }
-
-  /* margin-top: 50px; */
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center; */
 `;
