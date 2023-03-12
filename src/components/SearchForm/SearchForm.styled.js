@@ -6,6 +6,10 @@ export const Container = styled.div`
 
   margin-top: 100px;
   margin-bottom: 20px;
+
+  @media (min-width: 320px) and (max-width: 767px) {
+    flex-direction: column;
+  }
 `;
 
 export const Button = styled.button`

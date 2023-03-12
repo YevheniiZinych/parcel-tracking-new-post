@@ -57,6 +57,7 @@ export const SearchForm = ({ currentTtn }) => {
           <TextField
             sx={{
               width: '270px',
+              height: '55px',
               marginRight: '15px',
               backgroundColor: 'white',
               borderRadius: '3px',

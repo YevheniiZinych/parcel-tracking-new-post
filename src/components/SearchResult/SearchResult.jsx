@@ -19,19 +19,47 @@ export const SearchResult = () => {
       <h3
         style={{
           color: '#DC143C',
+          textAlign: 'center',
         }}
       >
         Search Result
       </h3>
       <ResultItem>
         <li>
-          <p>Статус доставки: {result.status} </p>
+          <p>
+            <span
+              style={{
+                color: '#DC143C',
+              }}
+            >
+              Статус доставки:
+            </span>
+            {result.status}
+          </p>
         </li>
         <li>
-          <p>Відправлено: {result.sender} </p>
+          <p>
+            <span
+              style={{
+                color: '#DC143C',
+              }}
+            >
+              Відправлено:
+            </span>
+            {result.sender}
+          </p>
         </li>
         <li>
-          <p>Отримано: {result.recipient} </p>
+          <p>
+            <span
+              style={{
+                color: '#DC143C',
+              }}
+            >
+              Отримано:
+            </span>
+            {result.recipient}
+          </p>
         </li>
       </ResultItem>
     </ResultContainer>
