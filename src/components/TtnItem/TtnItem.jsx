@@ -8,26 +8,24 @@ export const TtnItem = ({ id, number, getCurrentTtn }) => {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <Item key={id}>
-        <Inner>
-          <div
-            onClick={() => {
-              dispatch(getCurrentTracking({ number }));
-              getCurrentTtn(number);
+    <Item>
+      <Inner key={id}>
+        <div
+          onClick={() => {
+            dispatch(getCurrentTracking({ number }));
+            getCurrentTtn(number);
+          }}
+        >
+          <TtnNumber>{number}</TtnNumber>
+        </div>
+        <DeleteBtn type="button" onClick={() => dispatch(deleteTTN(id))}>
+          <HighlightOffIcon
+            sx={{
+              color: 'red',
             }}
-          >
-            <TtnNumber>{number}</TtnNumber>
-          </div>
-          <DeleteBtn type="button" onClick={() => dispatch(deleteTTN(id))}>
-            <HighlightOffIcon
-              sx={{
-                color: 'red',
-              }}
-            />
-          </DeleteBtn>
-        </Inner>
-      </Item>
-    </div>
+          />
+        </DeleteBtn>
+      </Inner>
+    </Item>
   );
 };

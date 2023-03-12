@@ -1,15 +1,12 @@
-import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from 'components/Layout';
 import { GlobalStyle } from 'components/GlobalStyle';
-import { Div } from './App.styled';
-
-const Home = lazy(() => import('../../Pages/Home/Home'));
-const PostOffice = lazy(() => import('../../Pages/PostOffice/PostOffice'));
+import { Home } from 'Pages/Home/Home';
+import { PostOffice } from 'Pages/PostOffice/PostOffice';
 
 export const App = () => {
   return (
-    <Div>
+    <div>
       <GlobalStyle />
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -17,6 +14,6 @@ export const App = () => {
           <Route path="office" element={<PostOffice />} />
         </Route>
       </Routes>
-    </Div>
+    </div>
   );
 };

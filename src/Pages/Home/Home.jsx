@@ -5,7 +5,7 @@ import { HistorySearch } from 'components/HistorySearch/HistorySearch';
 import { HomeContainer, SearchWrapper } from './Home.styled';
 
 export const Home = () => {
-  const [currentTtn, setCurrentTtn] = useState(null);
+  const [currentTtn, setCurrentTtn] = useState('');
 
   const getCurrentTtn = ttn => {
     setCurrentTtn(ttn);

@@ -52,7 +52,6 @@ export const SearchForm = ({ currentTtn }) => {
     <form onSubmit={formSubmit}>
       <Container>
         <label>
-          <b>Введіть номер накладної</b>
           <br />
           <TextField
             sx={{
@@ -63,6 +62,7 @@ export const SearchForm = ({ currentTtn }) => {
               borderRadius: '3px',
             }}
             error
+            label="Введіть номер накладної"
             id="outlined-error"
             type="text"
             name="text"

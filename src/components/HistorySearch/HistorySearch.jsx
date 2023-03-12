@@ -12,13 +12,7 @@ export const HistorySearch = ({ getCurrentTtn }) => {
         {ttn.length > 0 &&
           ttn.map(({ id, number }) => {
             return (
-              <>
-                <TtnItem
-                  getCurrentTtn={getCurrentTtn}
-                  id={id}
-                  number={number}
-                />
-              </>
+              <TtnItem getCurrentTtn={getCurrentTtn} id={id} number={number} />
             );
           })}
       </ul>
