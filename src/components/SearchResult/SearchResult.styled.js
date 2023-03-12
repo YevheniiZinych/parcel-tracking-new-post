@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const ResultContainer = styled.div`
   width: 650px;
   height: 300px;
+  border-radius: 4px;
 
   background-image: linear-gradient(
     rgba(47, 48, 58, 0.8),
@@ -16,10 +17,10 @@ export const ResultContainer = styled.div`
 
   @media (min-width: 320px) and (max-width: 767px) {
     max-width: 300px;
-    height: 200px;
+    height: 250px;
 
     p {
-      font-size: 16px;
+      font-size: 15px;
     }
   }
 `;
@@ -31,4 +32,10 @@ export const ResultItem = styled.ul`
   & :not(:last-child) {
     margin-bottom: 15px;
   }
+
+  /* margin-top: 50px; */
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center; */
 `;

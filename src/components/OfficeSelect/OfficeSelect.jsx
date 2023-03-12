@@ -9,6 +9,8 @@ import {
   TimeList,
   PostItem,
   Box,
+  PostNumber,
+  Address,
 } from './OfficeSelect.styled';
 
 const API_KEY = '28c234fe908d6729d7cc9731a29257d1';
@@ -31,7 +33,7 @@ export const OfficeSelect = () => {
     methodProperties: {
       CityName: checkName,
       Page: `${currentPage}`,
-      Limit: '50',
+      Limit: '25',
       Language: 'UA',
     },
   };
@@ -123,10 +125,8 @@ export const OfficeSelect = () => {
                     return (
                       <PostItem key={Ref}>
                         <WrapperPost>
-                          <span> Відділення № {Number}</span>
-                          <span style={{ marginRight: '60px' }}>
-                            {ShortAddress}
-                          </span>
+                          <PostNumber> Відд № {Number}</PostNumber>
+                          <Address>{ShortAddress}</Address>
 
                           <TimeList>
                             <Box>

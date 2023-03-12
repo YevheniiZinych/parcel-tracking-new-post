@@ -9,6 +9,7 @@ export const Container = styled.div`
 
   @media (min-width: 320px) and (max-width: 767px) {
     flex-direction: column;
+    margin-top: 60px;
   }
 `;
 
@@ -27,5 +28,12 @@ export const Button = styled.button`
   &:focus {
     background-color: grey;
     color: white;
+  }
+
+  @media (min-width: 320px) and (max-width: 767px) {
+    font-size: 17px;
+
+    margin-top: 15px;
+    padding: 10px;
   }
 `;

@@ -32,7 +32,7 @@ export const Navigation = () => {
               },
             }}
           >
-            Tracking Parcel
+            Перевірити ТТН
           </Typography>
         </NavLink>
 
@@ -55,7 +55,7 @@ export const Navigation = () => {
               },
             }}
           >
-            Post Office
+            Список відділень
           </Typography>
         </NavLink>
       </Box>

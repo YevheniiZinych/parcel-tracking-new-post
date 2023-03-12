@@ -8,6 +8,16 @@ export const HistorySearch = ({ getCurrentTtn }) => {
 
   return (
     <Inner>
+      <h3
+        style={{
+          color: '#DC143C',
+          textAlign: 'center',
+          marginBottom: '10px',
+        }}
+      >
+        Історія пошуку
+      </h3>
+
       <ul>
         {ttn.length > 0 &&
           ttn.map(({ id, number }) => {

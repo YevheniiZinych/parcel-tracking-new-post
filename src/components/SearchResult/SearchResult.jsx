@@ -22,7 +22,7 @@ export const SearchResult = () => {
           textAlign: 'center',
         }}
       >
-        Search Result
+        Статус посилки
       </h3>
       <ResultItem>
         <li>
@@ -30,6 +30,7 @@ export const SearchResult = () => {
             <span
               style={{
                 color: '#DC143C',
+                paddingRight: '5px',
               }}
             >
               Статус доставки:
@@ -42,6 +43,7 @@ export const SearchResult = () => {
             <span
               style={{
                 color: '#DC143C',
+                paddingRight: '5px',
               }}
             >
               Відправлено:
@@ -54,6 +56,7 @@ export const SearchResult = () => {
             <span
               style={{
                 color: '#DC143C',
+                paddingRight: '5px',
               }}
             >
               Отримано:
