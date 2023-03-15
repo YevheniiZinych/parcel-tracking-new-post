@@ -44,6 +44,7 @@ export const SearchForm = ({ currentTtn }) => {
 
     if (isNaN(value)) {
       toast('Потрібно вводити тільки числа. Наприклад: 20450670565349');
+      return;
     }
 
     switch (name) {
