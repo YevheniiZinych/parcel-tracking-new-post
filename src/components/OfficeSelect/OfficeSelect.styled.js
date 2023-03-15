@@ -20,6 +20,7 @@ export const Section = styled.section`
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
+  text-align: center;
   margin-top: 10px;
 
   @media (min-width: 320px) and (max-width: 767px) {
@@ -59,7 +60,7 @@ export const PostItem = styled.li`
 
   @media (min-width: 768px) and (max-width: 1023px) {
     height: 130px;
-    max-width: 800px;
+    width: 730px;
   }
 
   @media (min-width: 1024px) {
@@ -123,7 +124,7 @@ export const TimeList = styled.ul`
   @media (min-width: 1024px) {
     position: absolute;
     top: 60px;
-    left: 120px;
+    left: 95px;
     font-size: 17px;
   }
 `;

@@ -13,9 +13,7 @@ import {
   Address,
 } from './OfficeSelect.styled';
 
-const API_KEY = '28c234fe908d6729d7cc9731a29257d1';
-
-const baseURL = 'https://api.novaposhta.ua/v2.0/json/';
+const limit = 15;
 
 export const OfficeSelect = () => {
   const [cityName, setCityName] = useState('');
@@ -25,26 +23,21 @@ export const OfficeSelect = () => {
 
   const checkName = cityName === '' ? 'null' : cityName;
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const options = {
-    apiKey: API_KEY,
-    modelName: 'Address',
-    calledMethod: 'getWarehouses',
-    methodProperties: {
-      CityName: checkName,
-      Page: `${currentPage}`,
-      Limit: '25',
-      Language: 'UA',
-    },
+    city: checkName,
   };
 
   useEffect(() => {
     if (!cityName) return;
     if (fetching) {
       axios
-        .post(baseURL, options)
+        .post(
+          `https://post-office-ixqj.onrender.com/api/offices?page=${currentPage}&limit=${limit}`,
+          options
+        )
         .then(response => {
-          setOffice([...office, ...response.data.data]);
+          setOffice([...office, ...response.data]);
+
           setCurrentPage(prevState => prevState + 1);
         })
         .catch(err => console.log(err))
@@ -111,7 +104,7 @@ export const OfficeSelect = () => {
                   ({
                     Ref,
                     Number,
-                    ShortAddress,
+                    Description,
                     Reception: {
                       Monday,
                       Saturday,
@@ -126,7 +119,7 @@ export const OfficeSelect = () => {
                       <PostItem key={Ref}>
                         <WrapperPost>
                           <PostNumber> Відд № {Number}</PostNumber>
-                          <Address>{ShortAddress}</Address>
+                          <Address>{Description}</Address>
 
                           <TimeList>
                             <Box>
