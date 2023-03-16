@@ -92,7 +92,7 @@ export const Address = styled.span`
     position: absolute;
     top: 10px;
     right: 0;
-    width: 180px;
+    width: 300px;
     margin: 0;
   }
 
@@ -100,15 +100,17 @@ export const Address = styled.span`
     position: absolute;
     top: 5px;
     right: 50px;
-    width: 400px;
+    width: 600px;
     margin: 0;
+
+    font-size: 17px;
   }
 
   @media (min-width: 1024px) {
     position: absolute;
     top: 15px;
-    right: 50px;
-    width: 400px;
+    right: 80px;
+    width: 700px;
     margin: 0;
   }
 `;
@@ -118,7 +120,7 @@ export const TimeList = styled.ul`
     position: absolute;
     top: 45px;
     left: 40px;
-    font-size: 16px;
+    font-size: 15px;
   }
 
   @media (min-width: 1024px) {

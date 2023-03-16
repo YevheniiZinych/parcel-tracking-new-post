@@ -9,7 +9,6 @@ import {
   TimeList,
   PostItem,
   Box,
-  PostNumber,
   Address,
 } from './OfficeSelect.styled';
 
@@ -46,7 +45,7 @@ export const OfficeSelect = () => {
   }, [fetching, cityName, office, options]);
 
   useEffect(() => {
-    if (cityName) {
+    if (cityName === '') {
       setFetching(true);
       setCurrentPage(1);
       setOffice([]);
@@ -102,7 +101,6 @@ export const OfficeSelect = () => {
               {office?.length > 0 &&
                 office.map(
                   ({
-                    Ref,
                     Number,
                     Description,
                     Reception: {
@@ -116,9 +114,8 @@ export const OfficeSelect = () => {
                     },
                   }) => {
                     return (
-                      <PostItem key={Ref}>
+                      <PostItem key={Number}>
                         <WrapperPost>
-                          <PostNumber> Відд № {Number}</PostNumber>
                           <Address>{Description}</Address>
 
                           <TimeList>
