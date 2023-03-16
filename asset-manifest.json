@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/parcel-tracking-new-post/static/css/main.7acaea2f.css",
-    "main.js": "/parcel-tracking-new-post/static/js/main.e8921509.js",
+    "main.js": "/parcel-tracking-new-post/static/js/main.1760feac.js",
     "static/media/office-2360063_1920.jpg": "/parcel-tracking-new-post/static/media/office-2360063_1920.12942923292f50304845.jpg",
     "static/media/Post_Holdings_logo.png": "/parcel-tracking-new-post/static/media/Post_Holdings_logo.fa30e133080639539e05.png",
     "index.html": "/parcel-tracking-new-post/index.html",
     "main.7acaea2f.css.map": "/parcel-tracking-new-post/static/css/main.7acaea2f.css.map",
-    "main.e8921509.js.map": "/parcel-tracking-new-post/static/js/main.e8921509.js.map"
+    "main.1760feac.js.map": "/parcel-tracking-new-post/static/js/main.1760feac.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.e8921509.js"
+    "static/js/main.1760feac.js"
   ]
 }
