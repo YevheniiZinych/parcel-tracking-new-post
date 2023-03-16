@@ -1,16 +1,9 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Typography, TextField } from '@mui/material';
-import {
-  Container,
-  Section,
-  Wrapper,
-  WrapperPost,
-  TimeList,
-  PostItem,
-  Box,
-  Address,
-} from './OfficeSelect.styled';
+import { OfficeList } from 'components/OfficeList/OfficeList';
+import { Container, Section, Wrapper } from './OfficeSelect.styled';
+import { Spinner } from 'components/Spinner/Spinner';
 
 const limit = 15;
 
@@ -19,7 +12,7 @@ export const OfficeSelect = () => {
   const [office, setOffice] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [fetching, setFetching] = useState(false);
-
+  const [isLoading, setIsLoading] = useState(false);
   const checkName = cityName === '' ? 'null' : cityName;
 
   useEffect(() => {
@@ -28,18 +21,22 @@ export const OfficeSelect = () => {
       const options = {
         city: checkName,
       };
+      setIsLoading(true);
       axios
         .post(
           `https://post-office-ixqj.onrender.com/api/offices?page=${currentPage}&limit=${limit}`,
           options
         )
         .then(response => {
+          setIsLoading(false);
           setOffice([...office, ...response.data]);
-
           setCurrentPage(prevState => prevState + 1);
         })
         .catch(err => console.log(err))
-        .finally(() => setFetching(false));
+        .finally(() => {
+          setFetching(false);
+          setIsLoading(false);
+        });
     }
   }, [fetching, cityName, office, currentPage, checkName]);
 
@@ -48,6 +45,7 @@ export const OfficeSelect = () => {
       setFetching(true);
       setCurrentPage(1);
       setOffice([]);
+      setIsLoading(false);
     }
   }, [cityName]);
 
@@ -91,48 +89,13 @@ export const OfficeSelect = () => {
                 id="standard-basic"
                 label="Введіть ваше місто"
                 variant="standard"
-                sx={{}}
               />
             </label>
           </Wrapper>
           <Wrapper>
             <ul>
-              {office?.length > 0 &&
-                office.map(
-                  ({
-                    Number,
-                    Description,
-                    Reception: {
-                      Monday,
-                      Saturday,
-                      Sunday,
-                      Thursday,
-                      Tuesday,
-                      Wednesday,
-                      Friday,
-                    },
-                  }) => {
-                    return (
-                      <PostItem key={Number}>
-                        <WrapperPost>
-                          <Address>{Description}</Address>
-
-                          <TimeList>
-                            <Box>
-                              <li>Пн: {Monday} </li>
-                              <li>Вт: {Tuesday}</li>
-                              <li>Ср: {Wednesday}</li>
-                              <li>Чт: {Thursday}</li>
-                              <li>Пт: {Friday}</li>
-                              <li>Сб: {Saturday}</li>
-                              <li>Нд: {Sunday}</li>
-                            </Box>
-                          </TimeList>
-                        </WrapperPost>
-                      </PostItem>
-                    );
-                  }
-                )}
+              {isLoading && <Spinner />}
+              <OfficeList office={office} />
             </ul>
           </Wrapper>
         </Section>

@@ -8,8 +8,8 @@ export const TtnItem = ({ id, number, getCurrentTtn }) => {
   const dispatch = useDispatch();
 
   return (
-    <Item>
-      <Inner key={id}>
+    <Item key={id}>
+      <Inner>
         <div
           onClick={() => {
             dispatch(getCurrentTracking({ number }));
