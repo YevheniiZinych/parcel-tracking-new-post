@@ -22,13 +22,12 @@ export const OfficeSelect = () => {
 
   const checkName = cityName === '' ? 'null' : cityName;
 
-  const options = {
-    city: checkName,
-  };
-
   useEffect(() => {
     if (!cityName) return;
     if (fetching) {
+      const options = {
+        city: checkName,
+      };
       axios
         .post(
           `https://post-office-ixqj.onrender.com/api/offices?page=${currentPage}&limit=${limit}`,
