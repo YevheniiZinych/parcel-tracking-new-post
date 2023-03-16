@@ -4,11 +4,13 @@ import {
   Address,
   TimeList,
   Box,
+  Wrapper,
 } from './OfficeList.styled';
+import { Spinner } from 'components/Spinner/Spinner';
 
-export const OfficeList = ({ office }) => {
+export const OfficeList = ({ office, isLoading }) => {
   return (
-    <>
+    <Wrapper>
       {office?.length > 0 &&
         office.map(
           ({
@@ -44,6 +46,7 @@ export const OfficeList = ({ office }) => {
             );
           }
         )}
-    </>
+      {isLoading && <Spinner />}
+    </Wrapper>
   );
 };

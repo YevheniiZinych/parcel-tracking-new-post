@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { Typography, TextField } from '@mui/material';
 import { OfficeList } from 'components/OfficeList/OfficeList';
 import { Container, Section, Wrapper } from './OfficeSelect.styled';
-import { Spinner } from 'components/Spinner/Spinner';
 
 const limit = 15;
 
@@ -28,7 +27,6 @@ export const OfficeSelect = () => {
           options
         )
         .then(response => {
-          setIsLoading(false);
           setOffice([...office, ...response.data]);
           setCurrentPage(prevState => prevState + 1);
         })
@@ -94,8 +92,7 @@ export const OfficeSelect = () => {
           </Wrapper>
           <Wrapper>
             <ul>
-              {isLoading && <Spinner />}
-              <OfficeList office={office} />
+              <OfficeList isLoading={isLoading} office={office} />
             </ul>
           </Wrapper>
         </Section>
