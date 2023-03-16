@@ -42,7 +42,7 @@ export const OfficeSelect = () => {
         .catch(err => console.log(err))
         .finally(() => setFetching(false));
     }
-  }, [fetching, cityName, office, options]);
+  }, [fetching, cityName, office, options, currentPage]);
 
   useEffect(() => {
     if (cityName === '') {
