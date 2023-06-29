@@ -5,7 +5,6 @@ import { Inner } from './HistorySearch.styled';
 
 export const HistorySearch = ({ getCurrentTtn }) => {
   const { ttn } = useSelector(getTtn);
-  console.log(ttn);
 
   return (
     <Inner>
