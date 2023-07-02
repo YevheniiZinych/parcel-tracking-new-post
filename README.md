@@ -20,8 +20,8 @@ This application allows:
 
 - ## The project is written on its own back-end
 
-  - [Backend Documentation ](https://contacts-04gv.onrender.com/api-docs/)
-  - [Backend repo ](https://github.com/YevheniiZinych/nodejs-rest-api)
+  - [Backend Documentation ](https://post-office-ixqj.onrender.com/api-docs/)
+  - [Backend repo ](https://github.com/YevheniiZinych/parcel-tracking-api)
 
 ### Start project
 
