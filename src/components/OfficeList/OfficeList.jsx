@@ -8,7 +8,7 @@ import {
 } from './OfficeList.styled';
 import { Spinner } from 'components/Spinner/Spinner';
 
-export const OfficeList = ({ office, isLoading }) => {
+export const OfficeList = ({ office = [], isLoading }) => {
   return (
     <Wrapper>
       {office?.length > 0 &&
